@@ -1,2 +1,2 @@
-const arrr1 = ["Omar", "Rahul"];
-const arr2 = ["Guy", "Omar", "Austin"];
+const correct = ["Cat", "in", "the","hat"];
+const user = ["Cat", "the", "uh", "in"];
