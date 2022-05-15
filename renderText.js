@@ -1,10 +1,5 @@
 function renderText(annotatedText) {
-    // let colors = {
-    //     0:
-    //     1:
-    //     2:
-    // }
-    console.log("jo");
+    console.log("Beginning rendering text")
     for(let [k,v] of Object.entries(annotatedText)){
         let div = document.createElement("span");
         div.innerHTML = k + "  ";
@@ -25,7 +20,7 @@ function renderText(annotatedText) {
         document.getElementById("result").appendChild(div);
         console.log(k);
     }
-    console.log("jo1");
+    console.log("Finished rendering text");
 
 
 }
