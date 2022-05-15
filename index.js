@@ -63,28 +63,6 @@ function login() {
     }
 
     signInWithEmailAndPassword(auth, email, password)
-        .then(function() {
-            var user = auth.currentUser
-
-            /*set(ref(database, 'users/' + user.uid) {
-                user
-            })
-            var db_ref = database.ref
-
-            var user_data = {
-                previous_login_time : Date.now()
-            }
-
-            db_ref.child('users/' + user.uid).update(user_data)
-
-            alert('User Logged In')*/
-        })
-        .catch(function(error) {
-            var error_code = error.error_code
-            var error_message = error.message
-
-            alert(error_message)
-        })
 }
 function validate_email(email) {
     var valid_expression = /^[^@]+@\w+(\.\w+)+\w$/
