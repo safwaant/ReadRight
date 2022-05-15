@@ -34,7 +34,6 @@ if("webkitSpeechRecognition" in window){
         console.log(transcript);
         textBox.val(transcript);
     }
-
     
     /*$("#stop").click((event)=>{
         speechRecognition.stop();
@@ -61,4 +60,3 @@ if("webkitSpeechRecognition" in window){
 } else {
     console.log("Failed to load speech recognition");
 }
-
