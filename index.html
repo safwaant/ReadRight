@@ -17,10 +17,15 @@
     <link rel="stylesheet" type="text/css" href="./styles.css" />
   </head>
   <body>
+
+    <nav class="navbar navbar-dark bg-dark" style="padding-bottom:30px">
+
+    </nav>
+
     <img src="./logo.png" alt="ReadRight-Logo" id="logo" />
     <div class="container">
-      <h1 class="display-1 text-center mt-5">Read Right</h1>
-      <p id="instructions">Press Go To Start Recording!</p>
+      <h1 id="logo-text" class="">ReadRight</h1>
+      <!--<p id="instructions">Press Go To Start Recording!</p>
       <div class="row">
         <div class="form-group col-md-6">
           <textarea
@@ -40,11 +45,45 @@
           <button id="go" class="btn btn-primary" style="width:70px;margin-top:20px;"><i id="go_text" class="fa-solid fa-play"></i></button>
           <button id="submit" class="btn btn-success">Submit</button>
         </div>
+      </div> -->
+
+      <div class="row">
+          <div class="form-group col-md-12">
+            <div
+              id="prompt"
+              class="form-control text-block"
+            >
+              Never gonna give you up
+            </div>
+          </div>
       </div>
 
-      <div id="result" class="container">
-
+      <div class="row">
+        <button id="go" class="btn btn-danger control-button" ><i id="go_text" class="fa-solid fa-play"></i></button>
+        
       </div>
+      
+
+      <div class="row">
+        <div class="form-group col-md-12">
+          <div
+            id="textbox"
+            class="form-control text-block"
+          >            
+          </div>
+          
+        </div>
+    </div>
+
+    <div class="row container-fluid">
+      <button id="submit" class="btn btn-success control-button">Submit</button>
+      <span id="stats">
+            accuracy:--%
+      </span>
+    </div>
+
+        
+    </div>
 
 
       <!-- <div class="mt-4">
