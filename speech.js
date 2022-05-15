@@ -35,12 +35,14 @@ if("webkitSpeechRecognition" in window){
     $("#stop").click((event)=>{
         speechRecognition.stop();
         textBox.val("");
+        transcript = "";
     });
 
-    $("#go").click((event) => {
-        if(transcript.length){
-            transcript +="";
-        }
+    $("#go").click((event) => { 
+        transcript = "";       
+        // if(transcript.length){
+        //     transcript +="";
+        // }
         speechRecognition.start();
     });
 
