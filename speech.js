@@ -1,4 +1,3 @@
-import ComparisonAlgoObj from "./compareAlgo";
 
 if("webkitSpeechRecognition" in window){
     let speechRecognition = new webkitSpeechRecognition();
@@ -9,6 +8,16 @@ if("webkitSpeechRecognition" in window){
     let instructions = $("#instructions")
     let transcript = "";
     let recording = false;
+
+
+    const annotatedText = {
+        "Cat":0,
+        "in":0,
+        "uh":2,
+        "the":0,
+        "bat":1
+      }
+
 
     console.log("Speech Recognition Created");
 
@@ -43,9 +52,10 @@ if("webkitSpeechRecognition" in window){
     });*/
 
     $("#submit").click((event) => {
-        let promptText = document.getElementsById("prompt").value;
+        /*let promptText = document.getElementsById("prompt").value;
         let compareObj = new ComparisonAlgoObj(promptText, transcript);
-        const annotatedText = compareObj.compareAlgo();
+        const annotatedText = compareObj.compareAlgo();*/
+        renderText(annotatedText);
         
     });
 

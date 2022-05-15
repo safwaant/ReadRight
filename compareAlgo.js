@@ -1,4 +1,4 @@
-export default class ComparisonAlgoObj{
+class ComparisonAlgoObj{
     constructor(correct, transcript){
         this._correct = correct;
         this._transcript = transcript;
