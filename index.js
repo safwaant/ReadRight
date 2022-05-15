@@ -1,12 +1,13 @@
 var firebaseConfig = {
-  apiKey: "AIzaSyD3KIrId0t7ukM2XJ9eJTc03_luSTBOplk",
-  authDomain: "readright-8b84e.firebaseapp.com",
-  projectId: "readright-8b84e",
-  storageBucket: "readright-8b84e.appspot.com",
-  messagingSenderId: "397329676019",
-  appId: "1:397329676019:web:ea6b039c67b92aea8e2986",
+apiKey: "AIzaSyD3KIrId0t7ukM2XJ9eJTc03_luSTBOplk",
+authDomain: "readright-8b84e.firebaseapp.com",
+projectId: "readright-8b84e",
+storageBucket: "readright-8b84e.appspot.com",
+messagingSenderId: "397329676019",
+appId: "1:397329676019:web:ea6b039c67b92aea8e2986",
 
 };
+console.log('initialize')
 // Initalize Firebase
 firebase.initializeApp(firebaseConfig);
 
@@ -15,6 +16,7 @@ const database = firebase.database()
 
 //register button functionality
 function register() {
+    console.log('1')
     email = document.getElementById('email').value
     password = document.getElementById('password').value
 
@@ -23,6 +25,7 @@ function register() {
         return
     }
 
+    console.log('2')
     auth.createUserWithEmailAndPassword(email, password)
         .then(function() {
 
@@ -38,6 +41,7 @@ function register() {
             db_ref.child('users/' + user.uid).set(user_data)
         })
         .catch(function(error) {
+            console.log('error')
             alert(error.code)
             alert(error.message)
         })
@@ -55,7 +59,6 @@ function login() {
 
     auth.signInWithEmailAndPassword(email, password)
         .then(function() {
-
             var user = auth.currentUser
 
             var db_ref = database.ref()
@@ -76,7 +79,7 @@ function login() {
         })
 }
 function validate_email(email) {
-    valid_expression = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    valid_expression = /^[^@]+@\w+(\.\w+)+\w$/
     if (valid_expression.test(email) == true) {
         return true
     }
@@ -84,10 +87,8 @@ function validate_email(email) {
 };
 
 function validate_password(password) {
-    if (password < 6) {
+    if (password <= 10) {
         return false
     }
     return true
 };
-
-funciton
