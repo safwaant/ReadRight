@@ -3,9 +3,10 @@ if("webkitSpeechRecognition" in window){
     speechRecognition.continous = true;
     speechRecognition.interimResults = true;
     speechRecognition.lang = "en-US";
-    let textBox = $("#textbox");
+    let textBox = $("#textbox2");
     let instructions = $("#instructions")
     let transcript = "";
+    let recording = false;
 
     console.log("Speech Recognition Created");
 
@@ -15,6 +16,9 @@ if("webkitSpeechRecognition" in window){
 
     speechRecognition.onspeechend = () => {
         instructions.text("Finished Recording");
+        document.getElementById('go_text').classList.toggle('fa-stop');
+        document.getElementById('go_text').classList.toggle('fa-play');
+        recording = false;
     }
 
     speechRecognition.onerror = () => {
@@ -32,16 +36,26 @@ if("webkitSpeechRecognition" in window){
     }
 
     
-    $("#stop").click((event)=>{
+    /*$("#stop").click((event)=>{
         speechRecognition.stop();
         textBox.val("");
-    });
+    });*/
 
     $("#go").click((event) => {
-        if(transcript.length){
-            transcript +="";
-        }
-        speechRecognition.start();
+        if (recording) {
+            document.getElementById('go_text').classList.toggle('fa-stop');
+            document.getElementById('go_text').classList.toggle('fa-play');
+            speechRecognition.stop();
+            textBox.val("");
+            recording = false;
+        } else {
+            
+            document.getElementById('go_text').classList.toggle('fa-play');
+            document.getElementById('go_text').classList.toggle('fa-stop');
+            transcript = "";
+            speechRecognition.start();
+            recording = true;
+        }      
     });
 
 } else {
