@@ -36,6 +36,7 @@ body {
   margin: 0 0 30px 0;
   font-family: monospace;
   font-weight: 600;
+  text-shadow: 2px 2px 4px black;
 }
 
 .text-block {
@@ -51,7 +52,7 @@ body {
   font-family: 'Times New Roman', Times, serif;
 }
 
-#textbox {
+#result {
   background-color: #639FB0 ;
 }
 
@@ -77,6 +78,6 @@ body {
   min-width: 15%;
   max-width: 13%;
   color:white;
-  letter-spacing: 1.5px;
-
+  letter-spacing: .5px;
+  font-family: monospace;
 }
