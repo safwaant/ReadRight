@@ -40,9 +40,6 @@ if("webkitSpeechRecognition" in window){
 
     $("#go").click((event) => { 
         transcript = "";       
-        // if(transcript.length){
-        //     transcript +="";
-        // }
         speechRecognition.start();
     });
 
@@ -50,3 +47,4 @@ if("webkitSpeechRecognition" in window){
     console.log("Failed to load speech recognition");
 }
 
+module.exports = transcript;
