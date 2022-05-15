@@ -1,9 +1,11 @@
+import ComparisonAlgoObj from "./compareAlgo";
+
 if("webkitSpeechRecognition" in window){
     let speechRecognition = new webkitSpeechRecognition();
     speechRecognition.continous = true;
     speechRecognition.interimResults = true;
     speechRecognition.lang = "en-US";
-    let textBox = $("#textbox2");
+    let textBox = $("#textbox");
     let instructions = $("#instructions")
     let transcript = "";
     let recording = false;
@@ -39,6 +41,13 @@ if("webkitSpeechRecognition" in window){
         speechRecognition.stop();
         textBox.val("");
     });*/
+
+    $("#submit").click((event) => {
+        let promptText = document.getElementsById("prompt").value;
+        let compareObj = new ComparisonAlgoObj(promptText, transcript);
+        const annotatedText = compareObj.compareAlgo();
+        
+    });
 
     $("#go").click((event) => {
         if (recording) {

@@ -1,4 +1,4 @@
-class ComparisonAlgoObj{
+export default class ComparisonAlgoObj{
     constructor(correct, transcript){
         this._correct = correct;
         this._transcript = transcript;
@@ -13,7 +13,7 @@ class ComparisonAlgoObj{
     }
 
     compareAlgo(){
-
+        let res = {};
 
         
 
