@@ -5,16 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
+    <link rel="stylesheet" type="text/css" href="./login.css"/> 
 </head>
-<body>
-    <div>
-        <input type="text" id="email" placeholder="Email">
-        <input type="text" id="password" placeholder="Password">
+<body id="index_body">
+    <div id="login_box">
+        <input type="text" id="email" placeholder="Email" class="login_fields">
+        <input type="text" id="password" placeholder="Password" class="login_fields">
         <div id="button_container">
           <button id="login_button">Login</button>
           <button id="register_button">Register</button>
         </div>
       </div>
   </body>
-  <script src="./index.js"></script>
+  <script src="./index.js" type="module"></script>
 </html>

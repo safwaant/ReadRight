@@ -1,0 +1,32 @@
+.login_fields {
+  background: rgba(233, 228, 183, 0.2);
+  border-radius: 50px;
+}
+
+
+
+
+#index_body{
+    background: url(books-wallpaper.jpg);
+}
+
+
+#register_button { 
+  border: 1px solid #fdbe34;
+  border-radius: 50px;
+  background-color: #10316b;
+}
+
+#register_button:hover{background: rgba(253, 190, 52, 0.25);}
+
+#login_button {
+  background: #fdbe34;
+  border-radius: 50px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#login_box {
+  background: #10316b;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+}
