@@ -12,17 +12,18 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" type="text/css" href="./styles.css" />
+    <script type="module" src="./index.js"></script>
   </head>
 
-  <form>
-    <input type="text" id="email" placeholder="Email">
-    <input type="text" id="password" placeholder="Password">
-    <div id="button_container">
-      <button onclick="login()">Login</button>
-      <button onclick="register()">Register</button>
-    </div>
-  </form>
   <body>
+    <div>
+      <input type="text" id="email" placeholder="Email">
+      <input type="text" id="password" placeholder="Password">
+      <div id="button_container">
+        <button id="login_button">Login</button>
+        <button id="register_button">Register</button>
+      </div>
+    </div>
     <img src="./logo.png" alt="ReadRight-Logo" id="logo" />
     <div class="container">
       <h1 class="display-1 text-center mt-5">Read Right</h1>
@@ -39,21 +40,9 @@
         <button id="go" class="btn btn-primary">Go</button>
         <button id="stop" class="btn btn-danger">Stop</button>
       </div>
-    </div>
+    </div>  
   </body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="./speech.js"></script>
-
-  <!-- The core Firebase JS SDK is always required and must be listed first -->
-  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
-
-  <!-- TODO: Add SDKs for Firebase products that you want to use
-       https://firebase.google.com/docs/web/setup#available-libraries -->
-  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
-
-<!-- Our script must be loaded after firebase references -->
-<script src="index.js"></script>
-
   
 </html>
