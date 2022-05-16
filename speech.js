@@ -9,13 +9,13 @@ if("webkitSpeechRecognition" in window){
     let recording = false;
 
 
-    const annotatedText = {
-        "Cat":0,
-        "in":0,
-        "uh":2,
-        "the":0,
-        "bat":1
-      }
+    // const annotatedText = {
+    //     "Cat":0,
+    //     "in":0,
+    //     "uh":2,
+    //     "the":0,
+    //     "bat":1
+    //   }
 
 
     console.log("Speech Recognition Created");
@@ -50,14 +50,15 @@ if("webkitSpeechRecognition" in window){
     
 
     $("#submit").click((event) => {
-        /*let promptText = document.getElementsById("prompt").value;
+        let promptText = "Cat in the hat."
+        console.log(promptText);
+        console.log(transcript);
+
+
         let compareObj = new ComparisonAlgoObj(promptText, transcript);
-        const annotatedText = compareObj.compareAlgo();*/
+        const annotatedText = compareObj.compareAlgo();
 
         renderText(annotatedText);
-        let res = document.createElement("p");
-        res.innerHTML = "\n" + transcript;
-        document.getElementById("result").appendChild(res);
         
     });
 
