@@ -22,6 +22,7 @@ function register() {
     console.log('reg-1')
     var email = document.getElementById('email').value
     var password = document.getElementById('password').value
+    var user_name = document.getElementById('username').value
 
     if(validate_email(email)==false || validate_password(password)==false){
         alert('Email or Password is invalid')
@@ -29,13 +30,14 @@ function register() {
     }
 
     console.log('reg-2')
-    createUserWithEmailAndPassword(auth, email, password)
+    createUserWithEmailAndPassword(auth, email, password, user_name)
         .then(function() {
             var user = auth.currentUser
 
             var user_data = {
                 email : email,
-                password : password
+                password : password,
+                user_name : user_name
             }
 
             set(ref(database, 'users/' + user.uid), {
