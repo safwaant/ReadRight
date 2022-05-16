@@ -3,13 +3,12 @@ import {getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword} fro
 import {getDatabase, ref, set} from "https://www.gstatic.com/firebasejs/9.8.1/firebase-database.js"
 
 var firebaseConfig = {
-apiKey: "AIzaSyD3KIrId0t7ukM2XJ9eJTc03_luSTBOplk",
-authDomain: "readright-8b84e.firebaseapp.com",
-projectId: "readright-8b84e",
-storageBucket: "readright-8b84e.appspot.com",
-messagingSenderId: "397329676019",
-appId: "1:397329676019:web:ea6b039c67b92aea8e2986",
-
+    apiKey: "AIzaSyD3KIrId0t7ukM2XJ9eJTc03_luSTBOplk",
+    authDomain: "readright-8b84e.firebaseapp.com",
+    projectId: "readright-8b84e",
+    storageBucket: "readright-8b84e.appspot.com",
+    messagingSenderId: "397329676019",
+    appId: "1:397329676019:web:ea6b039c67b92aea8e2986",
 };
 console.log('initialize')
 // Initalize Firebase
@@ -42,6 +41,8 @@ function register() {
             set(ref(database, 'users/' + user.uid), {
                 user_data
             })
+            window.location.href = './main.html';
+
         })
         .catch(function(error) {
             console.log('error')
@@ -63,6 +64,13 @@ function login() {
     }
 
     signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            window.location.href = './main.html';
+            console.log(userCredential.user.email);
+        })
+        .catch((error) => {
+            alert("Invalid Email or Password.")
+        })
 }
 function validate_email(email) {
     var valid_expression = /^[^@]+@\w+(\.\w+)+\w$/
@@ -79,12 +87,14 @@ function validate_password(password) {
     return true
 };
 
+if (document.getElementById("login_button")) {
+    document.getElementById("login_button").addEventListener('click', function() {
+        login();
+    })
+}
 
-document.getElementById("login_button").addEventListener('click', function() {
-    login();
-});
-
-
-document.getElementById("register_button").addEventListener('click', function() {
-    register();
-});
+if(document.getElementById("register_button")) {
+    document.getElementById("register_button").addEventListener('click', function() {
+        register();
+    });
+}
