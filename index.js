@@ -42,6 +42,8 @@ function register() {
             set(ref(database, 'users/' + user.uid), {
                 user_data
             })
+            window.location.href = './main.html';
+
         })
         .catch(function(error) {
             console.log('error')
@@ -63,6 +65,12 @@ function login() {
     }
 
     signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            window.location.href = './main.html';
+        })
+        .catch((error) => {
+            prompt("Invalid Email or Password.")
+        })
 }
 function validate_email(email) {
     var valid_expression = /^[^@]+@\w+(\.\w+)+\w$/
@@ -79,12 +87,14 @@ function validate_password(password) {
     return true
 };
 
+if (document.getElementById("login_button")) {
+    document.getElementById("login_button").addEventListener('click', function() {
+        login();
+    })
+}
 
-document.getElementById("login_button").addEventListener('click', function() {
-    login();
-});
-
-
-document.getElementById("register_button").addEventListener('click', function() {
-    register();
-});
+if(document.getElementById("register_button")) {
+    document.getElementById("register_button").addEventListener('click', function() {
+        register();
+    });
+}
