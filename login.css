@@ -1,0 +1,91 @@
+.login_fields {
+  background: rgba(233, 228, 183, 0.2);
+  border-radius: 50px;
+  width: 70%;
+  left: 15%;
+  min-height: 70px;
+  position: relative;
+  margin-bottom: 50px;
+  margin-top: 10px;
+  font-size: 25px;
+  padding-left: 40px;
+  border-width: 0;
+  color: rgb(241, 236, 223);
+}
+
+
+
+
+#index_body{
+    background: url(books-wallpaper.jpg);
+}
+
+
+#register_button { 
+  border: 1px solid #fdbe34;
+  border-radius: 50px;
+  background-color: #10316b;
+}
+
+#register_button:hover{background: rgba(253, 190, 52, 0.25);}
+
+.login_signup_button {
+  background: #e6aa2a;
+  border-radius: 50px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  width: 75%;
+  min-height: 70px;
+  position: relative;
+  left: 15%;
+  color: rgb(233, 233, 228);
+  font-size:25px;
+  letter-spacing: 2px;
+  border-width: 0;
+  margin-top: 10px;
+}
+
+#login_button:hover {
+  cursor: pointer;
+}
+
+.login_box {
+  background: #10316b;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+  margin-top: 9%;
+  min-height: 60%;
+  width: 50%;
+  position: absolute;
+  left: 25%;
+}
+
+
+#main_text {
+  text-align: center;
+  font-size: 70px;
+  color: rgb(222, 215, 200);
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  letter-spacing:2px;
+}
+
+#s1 {
+  position: relative;
+  left: 40%;
+  margin-top: 20px;
+  color: rgb(225, 224, 221);
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+a {
+  color: aliceblue;
+}
+
+a:hover {
+  color: #e6aa2a;
+}
+
+.signup_box {
+  height: 70%;
+}
