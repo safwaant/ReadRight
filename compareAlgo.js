@@ -1,3 +1,4 @@
+// Written by Rahul Pillalamarri 
 class ComparisonAlgoObj {
   constructor(correct, transcript) {
     this.correct = correct;
